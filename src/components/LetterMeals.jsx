@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
+import { motion } from "framer-motion"
 
 const LetterMeals = () => {
   const letter = useContext(AppContext);
@@ -11,11 +12,11 @@ const LetterMeals = () => {
     letter.setLetter(e.target.innerText);
   };
   return (
-    <div className="px-20 py-4 bg-amber-700">
-      <p className="text-white text-center font-bold text-3xl mt-10 pb-4">
-        Search Meals my Letter
+    <div className="p-20 bg-amber-700" id="letter">
+      <p className="text-white text-center font-bold text-3xl pt-10 pb-4">
+        Search Meals by Letter
       </p>
-      <p className="text-2xl text-center mt-6">
+      <p className="text-4xl text-center mt-6 flex justify-center items-center flex-wrap gap-4">
         {[
           "A",
           "B",
@@ -43,13 +44,21 @@ const LetterMeals = () => {
           "Y",
           "Z",
         ].map((ltr) => (
-          <span
-            key={ltr}
-            className="text-white font-semibold mr-4 cursor-pointer"
+          <motion.div
+          key={ltr}
+            className="box bg-amber-950 w-16 h-16 leading-[55px] rounded-full cursor-pointer letterWrap drop-shadow-2xl"
+            whileHover={{ scale: 1.2 }}
             onClick={handelLetter}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            {ltr}
-          </span>
+            <span
+              
+              className=" font-semibold"
+            >
+              {ltr}
+            </span>
+          </motion.div>
         ))}
       </p>
     </div>

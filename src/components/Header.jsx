@@ -7,10 +7,10 @@ const Header = () => {
     navigate('/')
   }
   return (
-    <div className="px-10 py-4 bg-amber-950">
+    <div className="px-10 py-6 bg-amber-950">
       <div className="flex items-center justify-between">
         <div className="logo cursor-pointer" onClick={handelRedirect}>
-          <p className="text-xl font-bold text-orange-600">FoodJourneyHub</p>
+          <p className="text-xl font-bold text-orange-600">FoodJournayHub </p>
         </div>
         <div className="search-box">
           <form action="#">

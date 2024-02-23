@@ -5,3 +5,36 @@
 .title{
     font-family: proximanova;
 }
+
+*{
+    scroll-behavior: smooth;
+}
+
+.btn-wrap button{
+    background:#864322 ;
+    position: relative;
+    overflow: hidden;
+}
+.btn-wrap button::before{
+    background:#451a03 ;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    transition: .2s all;
+    z-index: 1;
+}
+.btn-wrap button:hover::before{
+    width: 100%;
+}
+
+.letterWrap:nth-child(odd){
+ color: #fff !important;
+}
+.letterWrap:nth-child(even){
+ background: white;
+ color: #451a03 !important;
+}

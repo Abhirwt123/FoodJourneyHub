@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import Layout from './components/Layout';
 import Letter from './components/Letter';
 import AppStore from './context/AppStore';
+import MealsDetail from './components/MealsDetail';
+import FilterMeals from './components/FilterMeals';
 
 function App() {
   return (
@@ -29,6 +31,14 @@ const AppRouter = createBrowserRouter([
       {
         path: "/letter/:id",
         element: <Letter />
+      },
+      {
+        path: "/detail/:id",
+        element: <MealsDetail />
+      },
+      {
+        path: "/categories",
+        element: <FilterMeals/>
       }
 
     ]

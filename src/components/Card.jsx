@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../context/AppContext";
 
-const Card = ({title,imgUrl}) => {
+const Card = ({title,imgUrl,id}) => {
+  const getId =useContext(AppContext)
+  const navigate=useNavigate();
+  const handelDetailPage=()=>{
+    getId.setCardId(id)
+    navigate(`/detail/${id}`)
+  }
   return (
-    <div className="flex gap-4 mt-10">
-      <div className="crd">
+    <div className="flex gap-4 mt-10 ">
+      <div className="crd" onClick={handelDetailPage}>
        <div className="item-img rounded-xl overflow-hidden h-64 max-w-[256px]">
        <img
           src={imgUrl}
