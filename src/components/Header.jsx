@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate =useNavigate();
@@ -8,20 +8,17 @@ const Header = () => {
   }
   return (
     <div className="px-10 py-6 bg-amber-950">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center lg:justify-between md:justify-between justify-center">
         <div className="logo cursor-pointer" onClick={handelRedirect}>
           <p className="text-xl font-bold text-orange-600">FoodJournayHub </p>
         </div>
         <div className="search-box">
-          <form action="#">
-            <input type="text" className="px-4 py-2 rounded-s-full" />
-            <button
-              type="submit"
-              className="px-4 py-2 bg-orange-600 text-white rounded-e-full"
-            >
-              Search
-            </button>
-          </form>
+          <ul className="gap-6 text-white lg:flex md:flex hidden">
+            <li><Link to={'/categories'}>Categories</Link></li>
+            <li><a href="#sMeal">SearchMeals</a></li>
+            <li><a href="#rMeal">RandomMeals</a></li>
+            <li><a href="#letter">SearchByLetter</a></li>
+          </ul>
         </div>
       </div>
     </div>

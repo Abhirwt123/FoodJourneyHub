@@ -10,9 +10,9 @@ const Card = ({title,imgUrl,id}) => {
     navigate(`/detail/${id}`)
   }
   return (
-    <div className="flex gap-4 mt-10 ">
+    <div className="flex gap-4 lg:mt-10  ">
       <div className="crd" onClick={handelDetailPage}>
-       <div className="item-img rounded-xl overflow-hidden h-64 max-w-[256px]">
+       <div className="item-img rounded-xl overflow-hidden h-64 lg:max-w-[256px] max-w-full">
        <img
           src={imgUrl}
           alt="food item"

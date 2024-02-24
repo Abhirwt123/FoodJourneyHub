@@ -16,9 +16,9 @@ const handelCategoriesRedirect=()=>{
  navigate('/categories')
 }
   return (
-    <div className="px-24 pt-10  bg-amber-700">
-      <div className="grid grid-cols-12 ">
-        <div className="col-span-5 relative  pt-10">
+    <div className="lg:px-24 md:px-16 px-6 lg:pt-10 pt-0 lg:py-0 py-8 bg-amber-700">
+      <div className="grid grid-cols-12 items-center gap-4">
+        <div className="lg:col-span-5  col-span-12 relative  pt-10">
           <h1 className="title text-[7vh] text-start text-white leading-[54px]">
             Welcome to Food Journey Hub
           </h1>
@@ -43,9 +43,9 @@ const handelCategoriesRedirect=()=>{
               </button>
           </div>
         </div>
-        <div className="col-span-7">
-          <div className="img-wrap w-9/12 ms-auto">
-            <img src={getImage} alt="Food image " />
+        <div className="lg:col-span-7  col-span-12">
+          <div className="img-wrap lg:w-9/12 w-full ms-auto rounded-2xl overflow-hidden">
+            <img src={getImage} alt="Food " />
           </div>
         </div>
       </div>

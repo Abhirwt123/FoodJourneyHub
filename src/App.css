@@ -2,10 +2,12 @@
     font-family:proximanova ;
     src: url(./assets/fonts/Fontspring-DEMO-proximanova-medium.otf);
 }
-.title{
+.title,.search-box ul li a{
     font-family: proximanova;
 }
-
+.search-box ul li:hover{
+    color: #B45309;
+}
 *{
     scroll-behavior: smooth;
 }

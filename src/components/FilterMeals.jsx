@@ -1,39 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import Card from "./Card"
+import SelectCategroies from './SelectCategroies';
 const FilterMeals = () => {
-    const [categorie,setCategorie]=useState()
-    const [searchData, setSearchData] = useState()
-    const fetchCategories = async ()=>{
-        const data =await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categorie}`)
-        const res =await data.json();
-        setSearchData(res.meals)
-    }
-    useEffect(()=>{
-fetchCategories()
-    },[categorie])
-    console.log(searchData)
+  const [categorie, setCategorie] = useState()
+  const [searchData, setSearchData] = useState()
+  const fetchCategories = async () => {
+    const data = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categorie}`)
+    const res = await data.json();
+    setSearchData(res.meals)
+  }
+  useEffect(() => {
+    fetchCategories()
+  }, [categorie])
+  // console.log(searchData)
+  // if (!searchData) return;
   return (
-    <div className='bg-amber-700  py-10'>
-        <h1 className='text-[4vh] font-bold text-center text-white'>Filter Meals By Selecting there Categories</h1>
-        <select value={categorie}  id="filterMeals" className='w-3/12 mx-auto block  mt-4 p-2' onChange={(e)=>setCategorie(e.target.value)}>
-            <option value="select" selected>SELECT</option>
-            <option value="Beef">Beef</option>
-            <option value="Chicken">Chicken</option>
-            <option value="Goat">Goat</option>
-            <option value="Breakfast">Breakfast</option>
-            <option value="Vegetarian">Vegetarian</option>
-            <option value="Vegan">Vegan</option>
-            <option value="Starter">Starter</option>
-            <option value="Side">Side</option>
-            <option value="Seafood">Seafood</option>
-            <option value="Pork">Pork</option>
-            <option value="Pasta">Pasta</option>
-            <option value="Miscellaneous">Miscellaneous</option>
-            <option value="Lamb">Lamb</option>
-            <option value="Dessert">Dessert</option>
-        </select>
-      <div className="mealCategoriesWrap">
-
-      </div>
+    <div className='bg-amber-700  py-10 min-h-screen'>
+      <h1 className='text-[4vh] font-bold text-center text-white'>Filter Meals By Selecting there Categories</h1><SelectCategroies categorie={categorie} setCategorie={setCategorie} />
+      {searchData ? <div className="mealCategoriesWrap px-20 flex flex-wrap gap-8 justify-center">
+        {searchData.map((crd, i) => <Card id={crd.idMeal} key={i} title={crd.strMeal} imgUrl={crd.strMealThumb} />)}
+      </div> : null}
     </div>
   )
 }

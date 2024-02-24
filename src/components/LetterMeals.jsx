@@ -12,8 +12,8 @@ const LetterMeals = () => {
     letter.setLetter(e.target.innerText);
   };
   return (
-    <div className="p-20 bg-amber-700" id="letter">
-      <p className="text-white text-center font-bold text-3xl pt-10 pb-4">
+    <div className="lg:px-20 md:px-16 px-6 bg-amber-700 py-6" id="letter">
+      <p className="text-white text-center font-bold text-3xl  pb-4">
         Search Meals by Letter
       </p>
       <p className="text-4xl text-center mt-6 flex justify-center items-center flex-wrap gap-4">
@@ -45,16 +45,15 @@ const LetterMeals = () => {
           "Z",
         ].map((ltr) => (
           <motion.div
-          key={ltr}
+            key={ltr}
             className="box bg-amber-950 w-16 h-16 leading-[55px] rounded-full cursor-pointer letterWrap drop-shadow-2xl"
             whileHover={{ scale: 1.2 }}
-            onClick={handelLetter}
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
             <span
-              
               className=" font-semibold"
+              onClick={handelLetter}
             >
               {ltr}
             </span>

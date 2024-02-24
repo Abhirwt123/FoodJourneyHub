@@ -28,7 +28,7 @@ const RandomMeals = () => {
   if (!searchData || searchData.length === 0) return null;
 
   return (
-    <>
+    <div id="rMeal">
       <h1 className="text-[6vh] text-white text-center font-bold bg-amber-700 pt-20">
         Random Meals
       </h1>
@@ -42,7 +42,7 @@ const RandomMeals = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
